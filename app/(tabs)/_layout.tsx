@@ -4,7 +4,6 @@ import Feather from "@expo/vector-icons/Feather";
 import { theme } from "../../theme";
 import { useUserStore } from "@/store/userStore";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { Pressable } from "react-native";
 
 export default function Layout() {
   const hasFinishedOnboarding = useUserStore(
@@ -16,17 +15,9 @@ export default function Layout() {
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: theme.colorGreen }}>
       <Tabs.Screen
-        name="index"
+        name="(home)"
         options={{
-          // headerShown: false,
-          headerRight: () => (
-            <Link href="/new" asChild>
-              <Pressable style={{ marginRight: 18 }} hitSlop={10}>
-                <AntDesign name="plus" size={24} color={theme.colorGreen} />
-              </Pressable>
-            </Link>
-          ),
-
+          headerShown: false,
           title: "Home",
           tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => (
